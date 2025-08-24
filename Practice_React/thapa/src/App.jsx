@@ -5,14 +5,16 @@ function App() {
   const [count, setCount] = useState(0);
 
   function counting() {
-    setCount(count + 1);
+    // setCount(count + 1)
+    setCount((count)=> count + 1)
+    setCount((count)=> count + 1)
   }
 
   return (
     <>
       <div className="border">
         <div>
-          <h1>{count}</h1>
+          <h1>Count : {count}</h1>
         </div>
         <div>
           <button onClick={counting}>Click Me!</button>
