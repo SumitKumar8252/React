@@ -11,10 +11,10 @@ function App() {
       const result= await response.json()
 
       const moviesArray= Object.entries(result).map((id , movie)=>({id, movie}))
-      // console.log("Data fetched: ", result)
+
       setMovies(moviesArray);
     } catch (error) {
-      
+      console.log(error)
     }
   }
 
