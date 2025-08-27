@@ -2,17 +2,32 @@ import React, {useState, useEffect} from 'react'
 
 const FetchData = () => {
     const [data, setData]= useState([])
+    const [loading, setLoading]= useState(false)
+    const [error, setError]= useState("")
 
     useEffect(()=>{
         async function fetchData(){
-            let response= await fetch('https://jsonplaceholder.typicode.com/posts')
-            let data= await response.json()
-            setData(data)
-            console.log(data)
+            setLoading(true)
+            try {
+                let response= await fetch('https://jsonplaceholder.typicode.com/posts')
+                let result= await response.json()
+                setData(result)
+                console.log(result)
+            } catch (error) {
+                console.log(error.message)
+            } finally {
+                setLoading(false)
+            }
         }
 
         fetchData()
-    },[])
+    },[]);
+
+    if(loading){
+        return (
+            <p>Loading ...</p>
+        )
+    }
 
   return (
     <>
