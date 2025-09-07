@@ -1,0 +1,28 @@
+{
+  "courses": [
+    {
+      "id": 2,
+      "title": "Intro to Express",
+      "instructor": "Bob",
+      "duration": "20"
+    },
+    {
+      "id": 3,
+      "title": "Intro to React",
+      "instructor": "Charlie",
+      "duration": "30"
+    },
+    {
+      "id": 4,
+      "title": "Intro to Redux",
+      "instructor": "Charlie",
+      "duration": "30"
+    },
+    {
+      "title": "Intro to Database 2",
+      "instructor": "David",
+      "duration": "50",
+      "id": 5
+    }
+  ]
+}
