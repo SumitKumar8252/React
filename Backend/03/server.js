@@ -8,6 +8,12 @@ app.get("/test", (req, res) => {
   res.send("Test Route is working fine !!");
 });
 
+app.get("all-courses", (req, res) => {
+  let data = fs.readFileSync("./db.json", "utf-8");
+  console.log(data);
+  res.json({msg: "List of course"})
+});
+
 app.get("/test1", (req, res) => {
   res.json({ msg: "This is Test 1." });
 });
