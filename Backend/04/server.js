@@ -15,6 +15,25 @@ app.get("/all-courses", (req, res)=>{
     res.send(data)
 })
 
+//search by query param
+app.get("/course", (req, res)=>{
+    let title= req.query.title
+
+    let data= JSON.parse(fs.readFileSync('./db.json', "utf-8"))
+    let courses= data.courses
+
+    let flag= true
+    courses.forEach((el, i)=>{
+        if(el.title.include(title)){
+            flag= false
+            res.json({msg: "Course", course: el})
+        }
+    })
+    if(flag===true){
+        res.status(404).json({msg: "Course not found .."})
+    }
+})
+
 //Add the course
 app.post('/add-course', (req, res)=>{
     let newCourse= req.body
