@@ -19,10 +19,11 @@
       "id": 3
     },
     {
-      "title": "Intro to Node JS",
-      "instructor": "Raj",
-      "duration": "30",
-      "id": 4
-    }
+      "title": "Intro to Mongo DB",
+      "instructor": "Alice",
+      "duration": "25",
+      "id": 6
+    },
+    { "title": "Intro to SQL", "instructor": "Tom", "duration": "20", "id": 7 }
   ]
 }
