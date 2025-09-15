@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
 // Course Route -------------------------------------------
 app.use("/courses", courseRouter);
 
-// Lecture Route ----------------------------------------
+// Lecture Route -----------------------------------------
 app.use("/lectures", lectureRouter);
 
 
