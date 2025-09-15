@@ -2,20 +2,20 @@ const fs= require("fs")
 const express= require('express')
 const app= express()
 
-app.use(express.json()) // parse the file from the source
+app.use(express.json()) // parse the file from the source (Postman, or anyother)
 
 app.get('/', (req, res)=>{
-    res.send("Hello from Home")
+    res.send("<h1>Hello from Home</h1>")
 })
 
-// Show all of the data
+// Show all of the data -------------------------------------------
 app.get("/all-courses", (req, res)=>{
     let data = fs.readFileSync("./db.json", "utf-8")
     // console.log(data)
-    res.send(data)
+    res.status(201).send(data)
 })
 
-//search by query param
+//search by query param -------------------------------------------
 app.get("/course", (req, res)=>{
     let title= req.query.title
 
@@ -34,7 +34,7 @@ app.get("/course", (req, res)=>{
     }
 })
 
-//Add the course
+//Add the course -------------------------------------------
 app.post('/add-course', (req, res)=>{
     let newCourse= req.body
 
@@ -50,7 +50,7 @@ app.post('/add-course', (req, res)=>{
     res.json(data)
 })
 
-//Update the course
+//Update the course -------------------------------------------
 app.put("/update-course/:id", (req, res)=>{
     let id= req.params.id
     let updateCourse= req.body
@@ -80,7 +80,7 @@ app.put("/update-course/:id", (req, res)=>{
     }
 })
 
-// Delete the course
+// Delete the course -------------------------------------------
 app.delete("/delete-course/:id", (req, res)=>{
    let id= req.params.id
    
@@ -102,6 +102,7 @@ app.delete("/delete-course/:id", (req, res)=>{
    }
 })
 
+// Listen or start the local server -------------------------------------------
 app.listen(3000, ()=>{
     console.info("Server Stared ...")
 })
