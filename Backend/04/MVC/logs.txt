@@ -1,0 +1,7 @@
+"Method: GET | EndPoint: /courses/course?title=Intro%20to%20React"
+"Method: GET | EndPoint: /courses/all-courses"
+"Method: GET | EndPoint: /"
+"Method: PUT | EndPoint: /courses/update-course/1"
+"Method: POST | EndPoint: /courses/add-course"
+"Method: DELETE | EndPoint: /courses/delete-course/3"
+Method: DELETE | EndPoint: /courses/delete-course/5
