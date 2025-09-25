@@ -1,11 +1,11 @@
-require("dotenv").config();
+require("dotenv").config();     // connecting witht he .env file
 const mongoose = require("mongoose");
 const express = require("express");
 const app = express();
 
 const connectToDB = async () => {
   try {
-    await mongoose.connect("mongodb://127.0.0.1:27017/");
+    await mongoose.connect("mongodb://127.0.0.1:27017/");     // on terminal "mongosh"
     console.log("Connected to DB");
   } catch (error) {
     console.info(error);
