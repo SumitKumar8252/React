@@ -1,0 +1,1 @@
+// we will create a function with conecting mongoDB and NodeJS
