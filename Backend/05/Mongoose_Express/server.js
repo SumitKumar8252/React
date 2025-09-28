@@ -13,7 +13,6 @@ app.use(express.json())         // json body parser middleware
 
 app.use("/users", UserRouter)
 
-
 app.listen(process.env.PORT, ()=>{
     console.log("Server is Ready !!")
 })
