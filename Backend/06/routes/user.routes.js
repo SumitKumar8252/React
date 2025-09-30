@@ -27,12 +27,18 @@ userRoute.post("/add-user", async (req, res) => {
 
 userRoute.patch("/edit-user/:userId", async (req, res) => {
   const { userId } = req.params;
-  let user = await UserModel.findById(userId);
-  if (!user) {
-    res.status(404).json({ msg: "User Not found !!" });
-  }else{
-    await UserModel.findByIdAndUpdate(userId, req.body )
-    res.json({msg: "Updated.."})
+  try {
+    let user = await UserModel.findById(userId);
+    if (!user) {
+      res.status(404).json({ msg: "User Not found !!" });
+    }else{
+      user.address.push(req.body)
+      // save the user document which stores new address in DB
+      await user.save()
+      res.status(201).json({msg: `Address is been updated ${user.nmae}`})
+    }
+  } catch (error) {
+    res.status(400).json({msg: "Found Error !!"})
   }
 });
 

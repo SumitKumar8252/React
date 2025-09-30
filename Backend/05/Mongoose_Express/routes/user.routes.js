@@ -19,7 +19,7 @@ UserRouter.post("/add-user", async (req, res) => {
   //add body the req.body into DB  by calling UserModel
   // .create()
   let user = await UserModel.create(req.body);
-  res.status(200).json({ msg: "User added", user }); // this response should work only after data added into DB
+  res.status(200).json({ msg: "User added", user });    // this response should work only after data added into DB
 });
 
 // Update the user by ID
