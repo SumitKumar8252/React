@@ -8,12 +8,15 @@ const app = express();
 connectToDB();
 app.use(express.json()); //Parse this with the middleware
 
-app.use("/test", (req, res)=>{
-    res.json({msg: "Test Route.."})
-})
 
 //User Routes
 app.use("/users", userRoute)
+
+
+//Handling the undefined routes
+app.use((req, res)=>{
+  res.status(404).json({msg: "Not found.. !!"})
+})
 
 app.listen(process.env.PORT, () => {
   console.log("Server Started !!");
