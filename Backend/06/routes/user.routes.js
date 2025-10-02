@@ -26,7 +26,7 @@ UserRouter.patch("/add-address/:userId",async (req,res)=>{
   try{
      let user = await UserModel.findById(userId);
      if(!user){
-      // user not found
+      // user noit found
       res.status(404).json({msg:"User Not Found.."})
      }else{
       // user found
